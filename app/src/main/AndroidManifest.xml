@@ -13,8 +13,8 @@
         <activity android:name=".Activities.ViewFoodActivity"></activity>
         <activity android:name=".Activities.RecipeActivity"></activity>
         <activity android:name=".Activities.RegisterActivity"></activity>
-        <activity android:name=".Activities.LoginActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

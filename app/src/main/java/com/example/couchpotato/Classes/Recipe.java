@@ -19,4 +19,8 @@ public class Recipe {
     public String getName() {
         return name;
     }
+
+    public String getPreference() {
+        return preference;
+    }
 }

@@ -47,16 +47,11 @@ public class ViewFoodActivity extends AppCompatActivity {
         });
 
         pantry = new ArrayList<>();
-        pantry.add(new Ingredient("Salt", 1.0 , 1, "pinch"));
-        pantry.add(new Ingredient("Dried Pasta", 1.0 , 1, "handful"));
-        pantry.add(new Ingredient("Butter", 1.0 , 2, "tablespoons"));
-        pantry.add(new Ingredient("Grated Parmesan", 2.0 ,1, "tablespoon"));
-        pantry.add(new Ingredient("Black Pepper", 1.0 ,1,  "pinch"));
-        pantry.add(new Ingredient("Salt", 1.0 , 1, "pinch"));
-        pantry.add(new Ingredient("Dried Pasta", 1.0 , 1, "handful"));
-        pantry.add(new Ingredient("Butter", 1.0 , 2, "tablespoons"));
-        pantry.add(new Ingredient("Grated Parmesan", 2.0 ,1, "tablespoon"));
-        pantry.add(new Ingredient("Black Pepper", 1.0 ,1,  "pinch"));
+        pantry.add(new Ingredient("Salt", 1.0 , 1, "pinch", -1));
+        pantry.add(new Ingredient("Dried Pasta", 1.0 , 1, "handful", -1));
+        pantry.add(new Ingredient("Butter", 1.0 , 2, "tablespoon" , 5));
+        pantry.add(new Ingredient("Grated Parmesan", 2.0 ,1, "tablespoon", 5));
+        pantry.add(new Ingredient("Black Pepper", 1.0 ,1,  "pinch", 5));
 
         ArrayList<String> ingName = new ArrayList<>();
         ArrayList<String> ingUnit = new ArrayList<>();

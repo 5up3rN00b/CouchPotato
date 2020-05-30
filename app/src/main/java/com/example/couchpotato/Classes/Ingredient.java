@@ -5,12 +5,12 @@ public class Ingredient {
     private double price;
     private int amount, expiration;
 
-    public Ingredient(String n, String u, double p, int am, int e) {
+    public Ingredient(String n, double p, int am, String u, int e) {
         name = n;
         unit = u;
         price = p;
         amount = am;
-        expiration = e;
+        expiration = e; // -1 if no expiration?
     }
 
 

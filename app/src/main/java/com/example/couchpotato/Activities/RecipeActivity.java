@@ -59,25 +59,17 @@ public class RecipeActivity extends AppCompatActivity {
 
 
         store.add(new Recipe(ingredients, "pasta", "Italian"));
+        store.add(new Recipe(ingredients, "noodles", "Chinese"));
+        store.add(new Recipe(ingredients, "curry", "India"));
+        store.add(new Recipe(ingredients, "baguettes", "French"));
+        store.add(new Recipe(ingredients, "rice", "Chinese"));
+        store.add(new Recipe(ingredients, "beer", "Germany"));
         store.add(new Recipe(ingredients, "pasta", "Italian"));
         store.add(new Recipe(ingredients, "pasta", "Italian"));
         store.add(new Recipe(ingredients, "pasta", "Italian"));
         store.add(new Recipe(ingredients, "pasta", "Italian"));
         store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
-        store.add(new Recipe(ingredients, "pasta", "Italian"));
+
 
         final ArrayList <String> recipeNames = new ArrayList<>();
         ArrayList <String> recipePreferences = new ArrayList<>();
@@ -89,7 +81,12 @@ public class RecipeActivity extends AppCompatActivity {
         MyAdapter adapter = new MyAdapter(this, recipeNames, recipePreferences);
         listView.setAdapter(adapter);
 
-        
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(RecipeActivity.this, recipeNames.get(position), Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

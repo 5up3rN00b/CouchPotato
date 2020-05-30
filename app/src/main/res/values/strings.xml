@@ -3,4 +3,7 @@
     <string name="back">back</string>
     <string name="main_title">Main Title</string>
     <string name="sub_title">Sub Title</string>
+    <string name="price">Price</string>
+    <string name="amount">Amount</string>
+    <string name="item">Item</string>
 </resources>

@@ -86,6 +86,7 @@ public class RecipeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(RecipeActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                //add to users cart TODO:
             }
         });
 

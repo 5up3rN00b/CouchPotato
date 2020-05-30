@@ -85,7 +85,7 @@ public class RecipeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(RecipeActivity.this, recipeNames.get(position), Toast.LENGTH_SHORT).show();
+                Toast.makeText(RecipeActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
             }
         });
 

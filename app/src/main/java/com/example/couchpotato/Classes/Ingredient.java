@@ -2,18 +2,24 @@ package com.example.couchpotato.Classes;
 
 public class Ingredient {
     private String name;
-    private int price;
+    private double price;
+    private String amount;
 
-    public Ingredient(String n, int p) {
+    public Ingredient(String n, double p, String m) {
         name = n;
         price = p;
+        amount = m;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPrice() {
+    public String getAmount() {
+        return amount;
+    }
+
+    public double getPrice() {
         return price;
     }
 }

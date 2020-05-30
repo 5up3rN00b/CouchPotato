@@ -83,7 +83,7 @@ public class RecipeActivity extends AppCompatActivity {
             recipeAmount.add("2");
         }
 
-        MyAdapter adapter = new MyAdapter(this, recipeNames, recipePrice);
+        MyAdapter adapter = new MyAdapter(  this, recipeNames, recipePrice);
         listView.setAdapter(adapter);
 
 

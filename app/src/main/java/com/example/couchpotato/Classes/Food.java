@@ -2,12 +2,12 @@ package com.example.couchpotato.Classes;
 
 public class Food {
     private String name;
-    private int timeStocked, price;
+    private int timeStocked, expiration;
 
-    public Food(String n, int t, int p) {
+    public Food(String n, int t, int e) {
         name = n;
         timeStocked = t;
-        price = p;
+        expiration = e;
     }
 
     public String getName() {
@@ -18,7 +18,7 @@ public class Food {
         return timeStocked;
     }
 
-    public int getPrice() {
-        return price;
+    public int getExpiration() {
+        return expiration;
     }
 }

@@ -1,16 +1,16 @@
 package com.example.couchpotato.Classes;
 
 public class Ingredient {
-    private String name;
+    private String name, unit;
     private double price;
-    private int amount;
-    private  String unit;
+    private int amount, expiration;
 
-    public Ingredient(String n, double p, int am,  String m) {
+    public Ingredient(String n, String u, double p, int am, int e) {
         name = n;
+        unit = u;
         price = p;
         amount = am;
-        unit = m;
+        expiration = e;
     }
 
 

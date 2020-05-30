@@ -3,22 +3,23 @@ package com.example.couchpotato.Classes;
 import java.util.ArrayList;
 
 public class User {
-    private String name;
-    private int price;
+    private String name, password;
+    private int balance;
     private ArrayList<Ingredient> cart;
     private ArrayList<Food> stocked, bought;
     private ArrayList<String> preferences;
 
-    public User(String n, int p) {
+    public User(String n, String p, int b) {
         name = n;
-        price = p;
+        password = p;
+        balance = b;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPrice() {
-        return price;
+    public int getBalance() {
+        return balance;
     }
 }

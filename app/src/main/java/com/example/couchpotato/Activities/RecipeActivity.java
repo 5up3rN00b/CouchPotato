@@ -52,11 +52,11 @@ public class RecipeActivity extends AppCompatActivity {
         });
 
         ArrayList <Ingredient> ingredients = new ArrayList<>();
-        ingredients.add(new Ingredient("Salt", 1.0 , 1, "pinch"));
-        ingredients.add(new Ingredient("Dried Pasta", 1.0 , 1, "handful"));
-        ingredients.add(new Ingredient("Butter", 1.0 , 2, "tablespoons"));
-        ingredients.add(new Ingredient("Grated Parmesan", 2.0 ,1, "tablespoon"));
-        ingredients.add(new Ingredient("Black Pepper", 1.0 ,1,  "pinch"));
+        ingredients.add(new Ingredient("Salt", 1.0 , 1, "pinch", -1));
+        ingredients.add(new Ingredient("Dried Pasta", 1.0 , 1, "handful", -1));
+        ingredients.add(new Ingredient("Butter", 1.0 , 2, "tablespoon" , 5));
+        ingredients.add(new Ingredient("Grated Parmesan", 2.0 ,1, "tablespoon", 5));
+        ingredients.add(new Ingredient("Black Pepper", 1.0 ,1,  "pinch", 5));
 
         store = new ArrayList<>();
 

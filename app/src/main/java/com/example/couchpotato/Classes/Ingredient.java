@@ -13,6 +13,7 @@ public class Ingredient {
         unit = m;
     }
 
+
     public String getName() {
         return name;
     }

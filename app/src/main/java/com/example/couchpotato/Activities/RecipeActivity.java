@@ -2,6 +2,9 @@ package com.example.couchpotato.Activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -61,16 +65,16 @@ public class RecipeActivity extends AppCompatActivity {
         store = new ArrayList<>();
 
 
-        store.add(new Recipe(ingredients, "pasta", "Italian", 1));
-        store.add(new Recipe(ingredients, "noodles", "Chinese", 1));
-        store.add(new Recipe(ingredients, "curry", "India", 10));
-        store.add(new Recipe(ingredients, "baguettes", "French", 1));
-        store.add(new Recipe(ingredients, "rice", "Chinese", 20));
-        store.add(new Recipe(ingredients, "pasta", "Italian", 1));
-        store.add(new Recipe(ingredients, "noodles", "Chinese", 1));
-        store.add(new Recipe(ingredients, "curry", "India", 10));
-        store.add(new Recipe(ingredients, "baguettes", "French", 1));
-        store.add(new Recipe(ingredients, "rice", "Chinese", 20));
+        store.add(new Recipe(ingredients, "Pasta", "Italian", 1));
+        store.add(new Recipe(ingredients, "Chow Mein", "Chinese", 1));
+        store.add(new Recipe(ingredients, "Chicken Curry", "Japanese", 10));
+        store.add(new Recipe(ingredients, "Baguettes", "French", 1));
+        store.add(new Recipe(ingredients, "Taco", "Mexican", 10));
+        store.add(new Recipe(ingredients, "Fried Rice", "Chinese", 15));
+        store.add(new Recipe(ingredients, "Burger", "American", 5));
+        store.add(new Recipe(ingredients, "Pizza", "Italian", 11));
+        store.add(new Recipe(ingredients, "Burrito", "Mexican", 8));
+
 
 
 
@@ -83,7 +87,23 @@ public class RecipeActivity extends AppCompatActivity {
             recipeAmount.add("2");
         }
 
-        MyAdapter adapter = new MyAdapter(  this, recipeNames, recipePrice);
+        ArrayList<Integer> pictures = new ArrayList<>();
+        pictures.add(R.drawable.pasta);
+        pictures.add(R.drawable.noodles);
+        pictures.add(R.drawable.chickencurry);
+        pictures.add(R.drawable.baguette);
+        pictures.add(R.drawable.taco);
+        pictures.add(R.drawable.friedrice);
+        pictures.add(R.drawable.burger);
+        pictures.add(R.drawable.pizza);
+        pictures.add(R.drawable.burrito);
+
+
+        MyAdapter adapter = new MyAdapter(this, recipeNames, recipePrice, pictures);
+
+
+
+
         listView.setAdapter(adapter);
 
 
@@ -94,17 +114,20 @@ public class RecipeActivity extends AppCompatActivity {
         ArrayList <String> recipeNames;
         ArrayList <Double> recipePrice;
         ArrayList <String> recipeAmount;
+        ArrayList <Integer> pictures;
         Button up;
         Button down;
         Button toCart;
         TextView countIng;
+        ImageView picture;
 
 
-        MyAdapter (Context c, ArrayList<String> names, ArrayList<Double> price){
+        MyAdapter (Context c, ArrayList<String> names, ArrayList<Double> price, ArrayList<Integer> pictures){
             super(c, R.layout.row, R.id.main_title, names);
             this.context = c;
             this.recipeNames = names;
             this.recipePrice = price;
+            this.pictures = pictures;
         }
 
         @NonNull
@@ -119,6 +142,8 @@ public class RecipeActivity extends AppCompatActivity {
             TextView myDescription = row.findViewById(R.id.sub_title);
             myTitle.setText(recipeNames.get(position));
             myDescription.setText("$" + recipePrice.get(position).toString());
+            picture = row.findViewById(R.id.image);
+            picture.setImageResource(pictures.get(position));
 
             toCart = row.findViewById(R.id.to_cart);
             up = row.findViewById(R.id.button_up);

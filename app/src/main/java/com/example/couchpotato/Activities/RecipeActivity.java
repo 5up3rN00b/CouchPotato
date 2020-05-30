@@ -86,6 +86,7 @@ public class RecipeActivity extends AppCompatActivity {
             recipePrice.add(r.getPrice());
             recipeAmount.add("2");
         }
+
         ArrayList<Integer> pictures = new ArrayList<>();
         pictures.add(R.drawable.pasta);
         pictures.add(R.drawable.noodles);
@@ -99,6 +100,10 @@ public class RecipeActivity extends AppCompatActivity {
 
 
         MyAdapter adapter = new MyAdapter(this, recipeNames, recipePrice, pictures);
+
+
+
+
         listView.setAdapter(adapter);
 
 

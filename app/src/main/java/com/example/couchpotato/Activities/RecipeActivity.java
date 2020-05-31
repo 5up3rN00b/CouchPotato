@@ -63,70 +63,70 @@ public class RecipeActivity extends AppCompatActivity {
         ingredientsPasta.add(new Ingredient("Black Pepper", 0.15 ,1,  "pinch", 5));
 
         ArrayList <Ingredient> ingredientsChowMein = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("Noodles", 5.00 , 1, "package", -1));
-        ingredientsPasta.add(new Ingredient("Soy Sauce", 0.45 , 1, "tablespoon", -1));
-        ingredientsPasta.add(new Ingredient("Garlic", 0.30 , 3, "cloves" , 5));
-        ingredientsPasta.add(new Ingredient("Canola Oil", 0.68,2, "tablespoon", 5));
-        ingredientsPasta.add(new Ingredient("Peas", 0.96 ,5,  "ounces", 5));
+        ingredientsChowMein.add(new Ingredient("Noodles", 5.00 , 1, "package", -1));
+        ingredientsChowMein.add(new Ingredient("Soy Sauce", 0.45 , 1, "tablespoon", -1));
+        ingredientsChowMein.add(new Ingredient("Garlic", 0.30 , 3, "cloves" , 5));
+        ingredientsChowMein.add(new Ingredient("Canola Oil", 0.68,2, "tablespoon", 5));
+        ingredientsChowMein.add(new Ingredient("Peas", 0.96 ,5,  "ounces", 5));
 
         ArrayList <Ingredient> ingredientsChicCurry = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("Chicken Thighs", 1.50 , 1, "lb", -1));
-        ingredientsPasta.add(new Ingredient("Black Pepper", 0.15, 2, "teaspoons", -1));
-        ingredientsPasta.add(new Ingredient("Carrots", 0.85 , 2, "Sticks" , 5));
-        ingredientsPasta.add(new Ingredient("Onions", 0.84 ,2, "Balls", 5));
-        ingredientsPasta.add(new Ingredient("Potatoes", 1.00 , 1, "Lump", -1));
-        ingredientsPasta.add(new Ingredient("Ginger", 0.42 , 2, "tablespoons", -1));
-        ingredientsPasta.add(new Ingredient("Garlic", 0.30 , 2, "Cloves" , 5));
-        ingredientsPasta.add(new Ingredient("Canola Oil", 0.68 ,2, "tablespoons", 5));
-        ingredientsPasta.add(new Ingredient("Salt", 0.10 , 2, "teaspoons", -1));
-        ingredientsPasta.add(new Ingredient("Japanese Curry Roux", 2.75 , 7, "ounces", -1));
-        ingredientsPasta.add(new Ingredient("Soy Sauce", 0.90 , 2, "tablespoons" , 5));
-        ingredientsPasta.add(new Ingredient("Ketchup", 0.56 ,2, "tablespoons", 5));
+        ingredientsChicCurry.add(new Ingredient("Chicken Thighs", 1.50 , 1, "lb", -1));
+        ingredientsChicCurry.add(new Ingredient("Black Pepper", 0.15, 2, "teaspoons", -1));
+        ingredientsChicCurry.add(new Ingredient("Carrots", 0.85 , 2, "Sticks" , 5));
+        ingredientsChicCurry.add(new Ingredient("Onions", 0.84 ,2, "Balls", 5));
+        ingredientsChicCurry.add(new Ingredient("Potatoes", 1.00 , 1, "Lump", -1));
+        ingredientsChicCurry.add(new Ingredient("Ginger", 0.42 , 2, "tablespoons", -1));
+        ingredientsChicCurry.add(new Ingredient("Garlic", 0.30 , 2, "Cloves" , 5));
+        ingredientsChicCurry.add(new Ingredient("Canola Oil", 0.68 ,2, "tablespoons", 5));
+        ingredientsChicCurry.add(new Ingredient("Salt", 0.10 , 2, "teaspoons", -1));
+        ingredientsChicCurry.add(new Ingredient("Japanese Curry Roux", 2.75 , 7, "ounces", -1));
+        ingredientsChicCurry.add(new Ingredient("Soy Sauce", 0.90 , 2, "tablespoons" , 5));
+        ingredientsChicCurry.add(new Ingredient("Ketchup", 0.56 ,2, "tablespoons", 5));
 
         ArrayList <Ingredient> ingredientsBaguette = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("Water", 1.20 , 26, "tablespoons", -1));
-        ingredientsPasta.add(new Ingredient("Dry Yeast", 0.32 , 2, "teaspoons", -1));
-        ingredientsPasta.add(new Ingredient("Flour", 0.52 , 4, "cups" , 5));
-        ingredientsPasta.add(new Ingredient("Salt", 0.10 ,2, "teaspoons", 5));
+        ingredientsBaguette.add(new Ingredient("Water", 1.20 , 26, "tablespoons", -1));
+        ingredientsBaguette.add(new Ingredient("Dry Yeast", 0.32 , 2, "teaspoons", -1));
+        ingredientsBaguette.add(new Ingredient("Flour", 0.52 , 4, "cups" , 5));
+        ingredientsBaguette.add(new Ingredient("Salt", 0.10 ,2, "teaspoons", 5));
 
         ArrayList <Ingredient> ingredientsTaco = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("Ground Beef", 3.25 , 1, "lb", -1));
-        ingredientsPasta.add(new Ingredient("Chili Powder", 0.52 , 2, "tablespoons", -1));
-        ingredientsPasta.add(new Ingredient("Ground Cumin", 0.15 , 2, "teaspoon" , 5));
-        ingredientsPasta.add(new Ingredient("Salt", 0.05 ,1, "teaspoon", 5));
-        ingredientsPasta.add(new Ingredient("Dried Oregano", 0.15 , 1, "teaspoon", -1));
-        ingredientsPasta.add(new Ingredient("Garlic Powder", 0.15 , 1, "teaspoons", -1));
-        ingredientsPasta.add(new Ingredient("Ground Black Pepper", 0.15 , 1, "teaspoon" , 5));
-        ingredientsPasta.add(new Ingredient("Tomato Sauce", 0.95 ,1, "Cup", 5));
-        ingredientsPasta.add(new Ingredient("Water", 0.99 , 4, "tablespoons", -1));
-        ingredientsPasta.add(new Ingredient("Taco Shells", 8.00 , 12, "shells", -1));
+        ingredientsTaco.add(new Ingredient("Ground Beef", 3.25 , 1, "lb", -1));
+        ingredientsTaco.add(new Ingredient("Chili Powder", 0.52 , 2, "tablespoons", -1));
+        ingredientsTaco.add(new Ingredient("Ground Cumin", 0.15 , 2, "teaspoon" , 5));
+        ingredientsTaco.add(new Ingredient("Salt", 0.05 ,1, "teaspoon", 5));
+        ingredientsTaco.add(new Ingredient("Dried Oregano", 0.15 , 1, "teaspoon", -1));
+        ingredientsTaco.add(new Ingredient("Garlic Powder", 0.15 , 1, "teaspoons", -1));
+        ingredientsTaco.add(new Ingredient("Ground Black Pepper", 0.15 , 1, "teaspoon" , 5));
+        ingredientsTaco.add(new Ingredient("Tomato Sauce", 0.95 ,1, "Cup", 5));
+        ingredientsTaco.add(new Ingredient("Water", 0.99 , 4, "tablespoons", -1));
+        ingredientsTaco.add(new Ingredient("Taco Shells", 8.00 , 12, "shells", -1));
 
         ArrayList <Ingredient> ingredientsFriedR = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("White Rice", 0.99 , 2, "cups", -1));
-        ingredientsPasta.add(new Ingredient("Water", 1.20 , 4, "cups", -1));
-        ingredientsPasta.add(new Ingredient("Baby Carrots", 0.87 , 11, "tablespoons" , 5));
-        ingredientsPasta.add(new Ingredient("Green Peas", 0.99 ,8, "tablespoons", 5));
-        ingredientsPasta.add(new Ingredient("Vegetable Oil", 0.68 , 2, "tablespoons", -1));
-        ingredientsPasta.add(new Ingredient("Eggs", 0.99 , 2, "units", -1));
-        ingredientsPasta.add(new Ingredient("Soy Sauce", 0.90 , 2, "tablespoons" , 5));
-        ingredientsPasta.add(new Ingredient("Sesame Oil", 0.45 ,1, "tablespoon", 5));
+        ingredientsFriedR.add(new Ingredient("White Rice", 0.99 , 2, "cups", -1));
+        ingredientsFriedR.add(new Ingredient("Water", 1.20 , 4, "cups", -1));
+        ingredientsFriedR.add(new Ingredient("Baby Carrots", 0.87 , 11, "tablespoons" , 5));
+        ingredientsFriedR.add(new Ingredient("Green Peas", 0.99 ,8, "tablespoons", 5));
+        ingredientsFriedR.add(new Ingredient("Vegetable Oil", 0.68 , 2, "tablespoons", -1));
+        ingredientsFriedR.add(new Ingredient("Eggs", 0.99 , 2, "units", -1));
+        ingredientsFriedR.add(new Ingredient("Soy Sauce", 0.90 , 2, "tablespoons" , 5));
+        ingredientsFriedR.add(new Ingredient("Sesame Oil", 0.45 ,1, "tablespoon", 5));
 
         ArrayList <Ingredient> ingredientsBurger = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("Ground beef", 4.00 , 2, "lb", -1));
-        ingredientsPasta.add(new Ingredient("Worcestershire Sauce", 0.44 , 1, "Tablespoon", -1));
-        ingredientsPasta.add(new Ingredient("Salt", 0.10 , 2, "teaspoons" , 5));
-        ingredientsPasta.add(new Ingredient("Ground Black Pepper", 0.15 ,1, "teaspoons", 5));
-        ingredientsPasta.add(new Ingredient("Vegetable Oil", 0.68 , 2, "tablespoons", -1));
-        ingredientsPasta.add(new Ingredient("Cheese", 2.10 , 4, "slices", -1));
-        ingredientsPasta.add(new Ingredient("Hamburger Buns", 5.50 , 4, "buns" , 5));
+        ingredientsBurger.add(new Ingredient("Ground beef", 4.00 , 2, "lb", -1));
+        ingredientsBurger.add(new Ingredient("Worcestershire Sauce", 0.44 , 1, "Tablespoon", -1));
+        ingredientsBurger.add(new Ingredient("Salt", 0.10 , 2, "teaspoons" , 5));
+        ingredientsBurger.add(new Ingredient("Ground Black Pepper", 0.15 ,1, "teaspoons", 5));
+        ingredientsBurger.add(new Ingredient("Vegetable Oil", 0.68 , 2, "tablespoons", -1));
+        ingredientsBurger.add(new Ingredient("Cheese", 2.10 , 4, "slices", -1));
+        ingredientsBurger.add(new Ingredient("Hamburger Buns", 5.50 , 4, "buns" , 5));
 
         ArrayList <Ingredient> ingredientsPizza = new ArrayList<>();
-        ingredientsPasta.add(new Ingredient("Pizza Dough", 5.00 , 16, "ounces", -1));
-        ingredientsPasta.add(new Ingredient("Pizza Sauce", 2.00 , 1, "cup", -1));
-        ingredientsPasta.add(new Ingredient("Grated Mozz. Cheese", 3.99 , 12, "ounces" , 5));
-        ingredientsPasta.add(new Ingredient("Ground Black Pepper", 0.15 ,1, "teaspoons", 5));
-        ingredientsPasta.add(new Ingredient("Oregano", 0.15 , 1, "teaspoons", -1));
-        ingredientsPasta.add(new Ingredient("Pepperoni", 6.00 , 19, "slices", -1));
+        ingredientsPizza.add(new Ingredient("Pizza Dough", 5.00 , 16, "ounces", -1));
+        ingredientsPizza.add(new Ingredient("Pizza Sauce", 2.00 , 1, "cup", -1));
+        ingredientsPizza.add(new Ingredient("Grated Mozz. Cheese", 3.99 , 12, "ounces" , 5));
+        ingredientsPizza.add(new Ingredient("Ground Black Pepper", 0.15 ,1, "teaspoons", 5));
+        ingredientsPizza.add(new Ingredient("Oregano", 0.15 , 1, "teaspoons", -1));
+        ingredientsPizza.add(new Ingredient("Pepperoni", 6.00 , 19, "slices", -1));
 
 
         store = new ArrayList<>();
@@ -251,9 +251,12 @@ public class RecipeActivity extends AppCompatActivity {
                     //add to users cart TODO:
                     ArrayList <Ingredient> parts;
                     Recipe r = store.get(position);
-                    for (Ingredient i : r.getRecipe()){
-                        ViewFoodActivity.cart.add(i);
-                    }
+                    countIng = listView.getChildAt(position).findViewById(R.id.count);
+                    System.out.println(countIng.toString());
+                        for (Ingredient i : r.getRecipe()) {
+                            i.multAmount(Integer.parseInt(countIng.getText().toString()));
+                            ViewFoodActivity.cart.add(i);
+                        }
                     return;
                 }
             });

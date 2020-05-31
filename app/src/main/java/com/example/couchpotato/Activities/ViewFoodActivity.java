@@ -3,6 +3,7 @@ package com.example.couchpotato.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,13 +22,14 @@ import com.example.couchpotato.Classes.Ingredient;
 import com.example.couchpotato.MainActivity;
 import com.example.couchpotato.R;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ViewFoodActivity extends AppCompatActivity {
+public class ViewFoodActivity extends AppCompatActivity  {
     Button button;
     ArrayList<Ingredient> pantry = new ArrayList<>();
     ListView listView;
-
+    public static ArrayList<Ingredient> cart = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +49,11 @@ public class ViewFoodActivity extends AppCompatActivity {
         });
 
         pantry = new ArrayList<>();
-        pantry.add(new Ingredient("Salt", 1.0 , 1, "pinch", -1));
-        pantry.add(new Ingredient("Dried Pasta", 1.0 , 1, "handful", -1));
-        pantry.add(new Ingredient("Butter", 1.0 , 2, "tablespoon" , 5));
-        pantry.add(new Ingredient("Grated Parmesan", 2.0 ,1, "tablespoon", 5));
-        pantry.add(new Ingredient("Black Pepper", 1.0 ,1,  "pinch", 5));
+        pantry.add(new Ingredient("Salt", 1.0 , 0, "pinch", -1));
+        pantry.add(new Ingredient("Dried Pasta", 1.0 , 0, "handful", -1));
+        pantry.add(new Ingredient("Butter", 1.0 , 0, "tablespoon" , 5));
+        pantry.add(new Ingredient("Grated Parmesan", 2.0 ,0, "tablespoon", 5));
+        pantry.add(new Ingredient("Black Pepper", 1.0 ,0,  "pinch", 5));
 
         ArrayList<String> ingName = new ArrayList<>();
         ArrayList<String> ingUnit = new ArrayList<>();
@@ -71,6 +73,7 @@ public class ViewFoodActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(ViewFoodActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
                 //add to users cart TODO:
+                return;
             }
         });
 
@@ -117,6 +120,7 @@ public class ViewFoodActivity extends AppCompatActivity {
                     Integer a = Integer.parseInt(countIng.getText().toString());
                     a++;
                     countIng.setText(a.toString());
+                    pantry.get(position).increase();
                     return;
                 }
             });
@@ -131,6 +135,7 @@ public class ViewFoodActivity extends AppCompatActivity {
                         return;
                     }
                     countIng.setText(a.toString());
+                    pantry.get(position).decrease();
                     return;
                 }
             });
@@ -140,6 +145,8 @@ public class ViewFoodActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(ViewFoodActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
                     //add to users cart TODO:
+                    cart.add(pantry.get(position));
+
                     return;
                 }
             });

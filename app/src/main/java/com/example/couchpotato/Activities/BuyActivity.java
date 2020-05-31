@@ -33,10 +33,10 @@ public class BuyActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.buy);
 
-        final ArrayList<Ingredient> list = new ArrayList<>();
-        list.add(new Ingredient("Apple", 35.15, 0, "lb", -1));
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+        ArrayList<Ingredient> list = ViewFoodActivity.cart;
+
+        ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
 
         BuyActivity.MyAdapter adapter = new MyAdapter(this, list);
@@ -53,6 +53,7 @@ public class BuyActivity extends AppCompatActivity {
                 return;
             }
         });
+
     }
 
 
@@ -77,11 +78,9 @@ public class BuyActivity extends AppCompatActivity {
             items = row.findViewById(R.id.item);
             amount = row.findViewById(R.id.amount);
             price = row.findViewById(R.id.price);
-            Integer am = names.get(position).getAmount();
-            String s = am.toString();
 
             items.setText(names.get(position).getName());
-            amount.setText(s);
+            amount.setText(String.valueOf(names.get(position).getAmount()));
             price.setText(String.valueOf(names.get(position).getPrice()));
             return row;
         }

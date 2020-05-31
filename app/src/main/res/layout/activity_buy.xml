@@ -45,7 +45,9 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.574" />
+        app:layout_constraintVertical_bias="0.574" >
+
+    </ListView>
 
     <Button
         android:id="@+id/button2"
@@ -122,5 +124,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.868" />
+
+    <Button
+        android:id="@+id/clearcart"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="102dp"
+        android:layout_height="39dp"
+        android:background="@drawable/backbutton"
+        android:fontFamily="@font/bebas_regular"
+        android:text="Clear Cart"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.087"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.856" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

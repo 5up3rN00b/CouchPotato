@@ -209,7 +209,7 @@ public class RecipeActivity extends AppCompatActivity {
             myTitle = row.findViewById(R.id.main_title);
             TextView myDescription = row.findViewById(R.id.sub_title);
             myTitle.setText(recipeNames.get(position));
-            myDescription.setText("$" + recipes.get(position).toString());
+            myDescription.setText("$" + recipePrice.get(position).toString());
             picture = row.findViewById(R.id.image);
             picture.setImageResource(pictures.get(position));
 

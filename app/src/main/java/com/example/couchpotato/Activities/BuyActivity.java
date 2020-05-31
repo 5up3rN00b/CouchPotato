@@ -50,7 +50,9 @@ public class BuyActivity extends AppCompatActivity {
             }
         }
 
-        total.setText("Total: $" + totalPrice);
+        double roundedPrice = ((int) (totalPrice * 100)) / 100.0;
+
+        total.setText("Total: $" + roundedPrice);
 
         ArrayList<Ingredient> list = new ArrayList<>();
         if (cart != null) {
@@ -123,13 +125,15 @@ public class BuyActivity extends AppCompatActivity {
             //input.setText(String.valueOf(names.get(position).getAmount()));
 
             if(input == null){
-                price.setText("$"+String.valueOf(names.get(position).getPrice() * names.get(position).getAmount()));
+                double totalPrice = ((int) (names.get(position).getPrice() * names.get(position).getAmount() * 100)) / 100.0;
+                price.setText("$" + totalPrice);
             } else{
                 inputValue = Integer.valueOf(input.getText().toString());
                 amount.setText(Integer.valueOf(input.getText().toString()));
 
                 names.get(position).setAmount(inputValue);
-                price.setText("$"+ String.valueOf(names.get(position).getPrice() * names.get(position).getAmount()));
+                double totalPrice = ((int) (names.get(position).getPrice() * names.get(position).getAmount() * 100)) / 100.0;
+                price.setText("$" + totalPrice);
 
 
             }

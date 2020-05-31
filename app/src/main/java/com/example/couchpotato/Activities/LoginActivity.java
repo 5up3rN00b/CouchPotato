@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.couchpotato.Classes.User;
 import com.example.couchpotato.MainActivity;
 import com.example.couchpotato.R;
 
@@ -38,6 +39,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText name, password;
 
     private static final String TAG = "LoginActivity";
+
+    public static User u = new User("aaron", "aaron", 0);
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

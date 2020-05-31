@@ -29,7 +29,7 @@ public class ViewFoodActivity extends AppCompatActivity  {
     Button button;
     ArrayList<Ingredient> pantry = new ArrayList<>();
     ListView listView;
-    public static ArrayList<Ingredient> cart = new ArrayList<>();
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +72,8 @@ public class ViewFoodActivity extends AppCompatActivity  {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(ViewFoodActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
+                MyAdapter myAdapter = (MyAdapter) parent.getItemAtPosition(position);
+                //LoginActivity.u.addToCart(new Ingredient(myAdapter.ingName.get(position), myAdapter.ingPrice.get(position), myAdapter.ingUnit.get(position)));
                 //add to users cart TODO:
                 return;
             }
@@ -145,7 +147,7 @@ public class ViewFoodActivity extends AppCompatActivity  {
                 public void onClick(View v) {
                     Toast.makeText(ViewFoodActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
                     //add to users cart TODO:
-                    cart.add(pantry.get(position));
+                    //cart.add(pantry.get(position));
 
                     return;
                 }

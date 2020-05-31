@@ -13,6 +13,10 @@ public class User {
         name = n;
         password = p;
         balance = b;
+        cart = new ArrayList<>();
+        stocked = new ArrayList<>();
+        bought = new ArrayList<>();
+        preferences = new ArrayList<>();
     }
 
     public String getName() {
@@ -21,5 +25,16 @@ public class User {
 
     public int getBalance() {
         return balance;
+    }
+
+    public void addToCart(Ingredient i) {
+        cart.add(i);
+    }
+
+    public void buyCart() {
+        for (int i = 0; i < cart.size(); i++) {
+            Ingredient ingredient = cart.get(i);
+            Food f = new Food(ingredient.getName(), System.currentTimeMillis(), 10);
+        }
     }
 }

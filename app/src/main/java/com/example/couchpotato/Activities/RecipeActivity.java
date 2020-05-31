@@ -99,7 +99,7 @@ public class RecipeActivity extends AppCompatActivity {
         ingredientsTaco.add(new Ingredient("Ground Black Pepper", 0.15 , 1, "teaspoon" , 5));
         ingredientsTaco.add(new Ingredient("Tomato Sauce", 0.95 ,1, "Cup", 5));
         ingredientsTaco.add(new Ingredient("Water", 0.99 , 4, "tablespoons", -1));
-        ingredientsTaco.add(new Ingredient("Taco Shells", 8.00 , 12, "shells", -1));
+        ingredientsTaco.add(new Ingredient("Taco Shells", 5.00 , 12, "shells", -1));
 
         ArrayList <Ingredient> ingredientsFriedR = new ArrayList<>();
         ingredientsFriedR.add(new Ingredient("White Rice", 0.99 , 2, "cups", -1));

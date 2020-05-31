@@ -32,6 +32,8 @@ public class BuyActivity extends AppCompatActivity {
     ListView listView;
     EditText input;
     int inputValue;
+    TextView total;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,8 +41,16 @@ public class BuyActivity extends AppCompatActivity {
         button = findViewById(R.id.back);
         input = findViewById(R.id.amount);
         listView = (ListView) findViewById(R.id.buy);
+        total = findViewById(R.id.total);
 
+        double totalPrice = 0;
+        if (cart != null) {
+            for (Ingredient ing : cart) {
+                totalPrice += (ing.getPrice() * ing.getAmount());
+            }
+        }
 
+        total.setText("Total: $" + totalPrice);
 
         ArrayList<Ingredient> list = new ArrayList<>();
         if (cart != null) {
@@ -100,23 +110,16 @@ public class BuyActivity extends AppCompatActivity {
             View row = layoutInflater.inflate(R.layout.buy_layout, parent, false);
             TextView items;
             TextView amount;
-            TextView total;
+
             final TextView price;
             items = row.findViewById(R.id.item);
             amount = row.findViewById(R.id.amount);
             price = row.findViewById(R.id.price);
-            total = row.findViewById(R.id.total);
+
 
             items.setText(names.get(position).getName());
-            amount.setText(String.valueOf(names.get(position).getAmount()));
-            int totalPrice = 0;
-            if (cart != null) {
-                for (Ingredient ing : cart) {
-                    totalPrice += ing.getPrice();
-                }
-            }
+            amount.setText(String.valueOf(names.get(position).getAmount()) + names.get(position).getUnit());
 
-            total.setText("Total: $" + String.valueOf(totalPrice));
             //input.setText(String.valueOf(names.get(position).getAmount()));
 
             if(input == null){

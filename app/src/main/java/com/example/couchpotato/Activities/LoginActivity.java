@@ -61,8 +61,8 @@ public class LoginActivity extends AppCompatActivity {
 
                     // Request parameters and other properties.
                     List<NameValuePair> params = new ArrayList<NameValuePair>(2);
-                    params.add(new BasicNameValuePair("registerName", name.getText().toString()));
-                    params.add(new BasicNameValuePair("registerPassword", password.getText().toString()));
+                    params.add(new BasicNameValuePair("loginName", name.getText().toString()));
+                    params.add(new BasicNameValuePair("loginPassword", password.getText().toString()));
                     httppost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
 
                     //Execute and get the response.

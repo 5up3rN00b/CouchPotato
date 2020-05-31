@@ -34,6 +34,8 @@ public class Ingredient {
         amount++;
     }
 
+    public void add (int am) {amount += am;}
+
     public void decrease(){
         if(!(amount == 0)){
             amount--;

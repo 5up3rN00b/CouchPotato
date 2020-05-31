@@ -34,6 +34,8 @@ public class Ingredient {
         amount++;
     }
 
+    public void multAmount (int m){amount*=m;}
+
     public void add (int am) {amount += am;}
 
     public void decrease(){

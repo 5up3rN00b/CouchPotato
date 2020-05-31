@@ -46,6 +46,8 @@ public class BuyActivity extends AppCompatActivity {
         if (cart != null) {
             boolean inList = false;
             for (Ingredient ing : cart) {
+                inList = false;
+                System.out.println(ing.getName() + " " + ing.getAmount());
                 for (int i = 0; i < list.size(); i++) {
                     if (list.get(i).getName().equals(ing.getName())) {
                         list.get(i).add(ing.getAmount());

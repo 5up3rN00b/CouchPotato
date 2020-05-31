@@ -51,6 +51,16 @@ public class LoginActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
+        Button tempButton = findViewById(R.id.loginButton2);
+
+        tempButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+                finish();
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override

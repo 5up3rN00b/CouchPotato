@@ -16,16 +16,21 @@
             android:layout_width="228dp"
             android:layout_height="51dp"
             android:layout_weight="1"
+            android:background="@drawable/name1"
             android:gravity="center"
             android:text="@string/item"
-            tools:ignore="NestedWeights" />
+            tools:ignore="NestedWeights"
+            android:layout_marginRight="5dp"
+            />
 
         <TextView
             android:id="@+id/amount"
             android:layout_width="228dp"
             android:layout_height="51dp"
             android:layout_weight="1"
+            android:background="@drawable/amount"
             android:gravity="center"
+            android:layout_marginRight="5dp"
             android:text="@string/amount" />
 
         <TextView
@@ -33,9 +38,9 @@
             android:layout_width="228dp"
             android:layout_height="51dp"
             android:layout_weight="1"
-            android:text="@string/price"
+            android:background="@drawable/amount"
             android:gravity="center"
-            />
+            android:text="@string/price" />
 
     </LinearLayout>
 

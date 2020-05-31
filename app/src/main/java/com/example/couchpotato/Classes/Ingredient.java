@@ -29,4 +29,16 @@ public class Ingredient {
     public double getPrice() {
         return price;
     }
+
+    public void increase(){
+        amount++;
+    }
+
+    public void add (int am) {amount += am;}
+
+    public void decrease(){
+        if(!(amount == 0)){
+            amount--;
+        }
+    }
 }

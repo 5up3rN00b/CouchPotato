@@ -15,23 +15,27 @@
             android:id="@+id/item"
             android:layout_width="228dp"
             android:layout_height="51dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/name1"
+            android:fontFamily="@font/bebas_regular"
             android:gravity="center"
             android:text="@string/item"
-            tools:ignore="NestedWeights"
-            android:layout_marginRight="5dp"
-            />
+            android:textSize="20sp"
+            tools:ignore="NestedWeights" />
 
-        <TextView
+        <EditText
             android:id="@+id/amount"
             android:layout_width="228dp"
             android:layout_height="51dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:background="@drawable/amount"
+            android:fontFamily="@font/bebas_regular"
             android:gravity="center"
-            android:layout_marginRight="5dp"
-            android:text="@string/amount" />
+            android:hint="@string/amount"
+            android:inputType="number"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/price"
@@ -39,8 +43,10 @@
             android:layout_height="51dp"
             android:layout_weight="1"
             android:background="@drawable/amount"
+            android:fontFamily="@font/bebas_regular"
             android:gravity="center"
-            android:text="@string/price" />
+            android:text="@string/price"
+            android:textSize="20sp" />
 
     </LinearLayout>
 

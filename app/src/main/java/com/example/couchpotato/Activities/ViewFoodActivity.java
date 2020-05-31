@@ -49,11 +49,11 @@ public class ViewFoodActivity extends AppCompatActivity  {
         });
 
         pantry = new ArrayList<>();
-        pantry.add(new Ingredient("Salt", 1.0 , 0, "pinch", -1));
-        pantry.add(new Ingredient("Dried Pasta", 1.0 , 0, "handful", -1));
-        pantry.add(new Ingredient("Butter", 1.0 , 0, "tablespoon" , 5));
-        pantry.add(new Ingredient("Grated Parmesan", 2.0 ,0, "tablespoon", 5));
-        pantry.add(new Ingredient("Black Pepper", 1.0 ,0,  "pinch", 5));
+        pantry.add(new Ingredient("Salt", 0.99 , 0, "pinch", -1));
+        pantry.add(new Ingredient("Dried Pasta", 0.99 , 0, "handful", -1));
+        pantry.add(new Ingredient("Butter", 0.99 , 0, "tablespoon" , 5));
+        pantry.add(new Ingredient("Grated Parmesan", 1.99 ,0, "tablespoon", 5));
+        pantry.add(new Ingredient("Black Pepper", 0.99 ,0,  "pinch", 5));
 
         ArrayList<String> ingName = new ArrayList<>();
         ArrayList<String> ingUnit = new ArrayList<>();

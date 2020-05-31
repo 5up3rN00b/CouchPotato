@@ -133,36 +133,23 @@ public class ViewFoodActivity extends AppCompatActivity  {
             ingPrice.add(ing.getPrice());
         }
 
-        MyAdapter adapter = new MyAdapter(this, ingName, ingUnit, ingPrice);
+        MyAdapter adapter = new MyAdapter(this, pantry, ingName);
         listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(ViewFoodActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
-                MyAdapter myAdapter = (MyAdapter) parent.getItemAtPosition(position);
-                //LoginActivity.u.addToCart(new Ingredient(myAdapter.ingName.get(position), myAdapter.ingPrice.get(position), myAdapter.ingUnit.get(position)));
-                //add to users cart TODO:
-                return;
-            }
-        });
 
     }
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
-        ArrayList<String> ingName;
-        ArrayList<String> ingUnit;
-        ArrayList <Double> ingPrice;
+        ArrayList<Ingredient> pantry;
+        ArrayList <String> names;
         Button up, down, toCart;
         TextView countIng;
 
-        MyAdapter (Context c, ArrayList<String> names, ArrayList<String> units, ArrayList <Double> prices){
+        MyAdapter (Context c, ArrayList<Ingredient> pantry, ArrayList <String > names){
             super(c, R.layout.row, R.id.main_title, names);
             this.context = c;
-            this.ingName = names;
-            this.ingUnit = units;
-            this.ingPrice = prices;
+            this.pantry = pantry;
+            this.names= names;
         }
 
         @NonNull
@@ -173,8 +160,8 @@ public class ViewFoodActivity extends AppCompatActivity  {
             TextView myTitle;
             myTitle = row.findViewById(R.id.main_title);
             TextView myDescription = row.findViewById(R.id.sub_title);
-            myTitle.setText(ingName.get(position));
-            myDescription.setText("$" + ingPrice.get(position).toString());
+            myTitle.setText(pantry.get(position).getName());
+            myDescription.setText("$" + pantry.get(position).getPrice());
 
             toCart = row.findViewById(R.id.to_cart);
             up = row.findViewById(R.id.button_up);
@@ -186,11 +173,14 @@ public class ViewFoodActivity extends AppCompatActivity  {
             up.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    countIng = listView.getChildAt(position).findViewById(R.id.count);
-                    Integer a = Integer.parseInt(countIng.getText().toString());
-                    a++;
-                    countIng.setText(a.toString());
-                    pantry.get(position).increase();
+                    if (countIng != null) {
+                        countIng = listView.getChildAt(position).findViewById(R.id.count);
+                        Integer a = Integer.parseInt(countIng.getText().toString());
+                        a++;
+                        countIng.setText(a.toString());
+                        System.out.println(countIng.toString());
+                        pantry.get(position).increase();
+                    }
                     return;
                 }
             });
@@ -199,14 +189,16 @@ public class ViewFoodActivity extends AppCompatActivity  {
                 @Override
                 public void onClick(View v) {
                     countIng = listView.getChildAt(position).findViewById(R.id.count);
-                    String s = countIng.getText().toString();
-                    Integer a = Integer.parseInt(s) - 1;
-                    if (a<0){
-                        return;
+                    if (countIng != null) {
+                        String s = countIng.getText().toString();
+                        Integer a = Integer.parseInt(s) - 1;
+                        if (a < 0) {
+                            return;
+                        }
+                        countIng.setText(a.toString());
+                        pantry.get(position).decrease();
                     }
-                    countIng.setText(a.toString());
-                    pantry.get(position).decrease();
-                    return;
+                        return;
                 }
             });
 

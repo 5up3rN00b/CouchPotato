@@ -8,11 +8,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.couchpotato.MainActivity;
 import com.example.couchpotato.R;
 
 import org.apache.commons.io.IOUtils;
@@ -37,7 +39,7 @@ import java.util.List;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private Button submit;
+    private Button submit, back;
     private EditText name, password;
 
     private static final String TAG = "RegisterActivity";
@@ -50,9 +52,18 @@ public class RegisterActivity extends AppCompatActivity {
         submit = findViewById(R.id.registerButton);
         name = findViewById(R.id.registerName);
         password = findViewById(R.id.registerPassword);
+        back = findViewById(R.id.to_login);
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                finish();
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -74,7 +85,18 @@ public class RegisterActivity extends AppCompatActivity {
 
                     InputStream inputStream = entity.getContent();
                     String text = IOUtils.toString(inputStream, StandardCharsets.UTF_8.name());
-
+                    if (name.getText().toString().length() == 0 || password.getText().toString().length() == 0){
+                        Toast.makeText(RegisterActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (text.equals("Registered successfully")){
+                        Toast.makeText(RegisterActivity.this, text, Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(RegisterActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    }
                     Log.d(TAG, text);
                 } catch (Exception e) {
                     Log.d(TAG, "Exception occurred " + e);

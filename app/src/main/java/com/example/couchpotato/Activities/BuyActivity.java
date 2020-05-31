@@ -34,7 +34,21 @@ public class BuyActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.buy);
 
 
-        ArrayList<Ingredient> list = ViewFoodActivity.cart;
+
+        ArrayList<Ingredient> list = new ArrayList<>();
+        boolean inList = false;
+        for (Ingredient ing : ViewFoodActivity.cart){
+            for (int i = 0; i<list.size(); i++){
+                if (list.get(i).getName().equals(ing.getName())){
+                    list.get(i).add(ing.getAmount());
+                    inList = true;
+                }
+            }
+            if (inList == false){
+                list.add(ing);
+            }
+        }
+
 
         ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 

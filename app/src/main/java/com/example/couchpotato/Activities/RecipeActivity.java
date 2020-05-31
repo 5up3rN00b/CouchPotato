@@ -111,6 +111,8 @@ public class RecipeActivity extends AppCompatActivity {
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
+
+        ArrayList<Recipe> recipes;
         ArrayList <String> recipeNames;
         ArrayList <Double> recipePrice;
         ArrayList <String> recipeAmount;
@@ -141,7 +143,7 @@ public class RecipeActivity extends AppCompatActivity {
             myTitle = row.findViewById(R.id.main_title);
             TextView myDescription = row.findViewById(R.id.sub_title);
             myTitle.setText(recipeNames.get(position));
-            myDescription.setText("$" + recipePrice.get(position).toString());
+            myDescription.setText("$" + recipes.get(position).toString());
             picture = row.findViewById(R.id.image);
             picture.setImageResource(pictures.get(position));
 

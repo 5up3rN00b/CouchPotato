@@ -94,7 +94,7 @@ public class ViewFoodActivity extends AppCompatActivity  {
         pantry.add(new Ingredient("Ground Black Pepper", 0.15 , 1, "teaspoon" , 5));
         pantry.add(new Ingredient("Tomato Sauce", 0.95 ,1, "Cup", 5));
         pantry.add(new Ingredient("Water", 0.99 , 4, "tablespoons", -1));
-        pantry.add(new Ingredient("Taco Shells", 8.00 , 12, "shells", -1));
+        pantry.add(new Ingredient("Taco Shells", 5.00 , 12, "shells", -1));
 
 
         pantry.add(new Ingredient("White Rice", 0.99 , 2, "cups", -1));

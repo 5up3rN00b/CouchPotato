@@ -91,7 +91,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.517"
-        app:srcCompat="@drawable/checkout" />
+        app:srcCompat="@drawable/checkoutmain" />
 
     <ImageView
         android:id="@+id/imageView5"

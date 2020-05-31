@@ -3,12 +3,15 @@ package com.example.couchpotato.Activities;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,12 +28,14 @@ import java.util.*;
 public class BuyActivity extends AppCompatActivity {
     Button button;
     ListView listView;
+    EditText input;
+    int inputValue;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buy);
         button = findViewById(R.id.back);
-
+        input = findViewById(R.id.amount);
         listView = (ListView) findViewById(R.id.buy);
 
 
@@ -88,14 +93,28 @@ public class BuyActivity extends AppCompatActivity {
             View row = layoutInflater.inflate(R.layout.buy_layout, parent, false);
             TextView items;
             TextView amount;
-            TextView price;
+            final TextView price;
             items = row.findViewById(R.id.item);
             amount = row.findViewById(R.id.amount);
             price = row.findViewById(R.id.price);
 
             items.setText(names.get(position).getName());
             amount.setText(String.valueOf(names.get(position).getAmount()));
-            price.setText(String.valueOf(names.get(position).getPrice()));
+
+            //input.setText(String.valueOf(names.get(position).getAmount()));
+
+            if(input == null){
+                price.setText("$"+String.valueOf(names.get(position).getPrice() * names.get(position).getAmount()));
+            } else{
+                inputValue = Integer.valueOf(input.getText().toString());
+                amount.setText(Integer.valueOf(input.getText().toString()));
+
+                names.get(position).setAmount(inputValue);
+                price.setText("$"+ String.valueOf(names.get(position).getPrice() * names.get(position).getAmount()));
+
+
+            }
+
             return row;
         }
     }

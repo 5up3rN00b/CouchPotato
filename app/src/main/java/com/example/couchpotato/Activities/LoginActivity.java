@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -80,7 +81,19 @@ public class LoginActivity extends AppCompatActivity {
                     HttpEntity entity = response.getEntity();
 
                     InputStream inputStream = entity.getContent();
-                    String text = IOUtils.toString(inputStream, StandardCharsets.UTF_8.name());
+                    String text = "";
+                    text = IOUtils.toString(inputStream, StandardCharsets.UTF_8.name());
+                    if (name.getText().toString().length() == 0 || password.getText().toString().length() == 0){
+                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (text.equals("Login success")){
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        finish();
+                    }
+                    else{
+                        Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    }
 
                     Log.d(TAG, text);
                 } catch (Exception e) {

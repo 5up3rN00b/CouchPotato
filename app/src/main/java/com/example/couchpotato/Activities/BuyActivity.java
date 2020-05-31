@@ -98,14 +98,23 @@ public class BuyActivity extends AppCompatActivity {
             View row = layoutInflater.inflate(R.layout.buy_layout, parent, false);
             TextView items;
             TextView amount;
+            TextView total;
             final TextView price;
             items = row.findViewById(R.id.item);
             amount = row.findViewById(R.id.amount);
             price = row.findViewById(R.id.price);
+            total = row.findViewById(R.id.total);
 
             items.setText(names.get(position).getName());
             amount.setText(String.valueOf(names.get(position).getAmount()));
+            int totalPrice = 0;
+            if (cart != null) {
+                for (Ingredient ing : cart) {
+                    totalPrice += ing.getPrice();
+                }
+            }
 
+            total.setText("Total: $" + String.valueOf(totalPrice));
             //input.setText(String.valueOf(names.get(position).getAmount()));
 
             if(input == null){

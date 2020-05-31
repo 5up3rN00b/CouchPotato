@@ -28,7 +28,7 @@ import java.util.*;
 import static com.example.couchpotato.Activities.ViewFoodActivity.cart;
 
 public class BuyActivity extends AppCompatActivity {
-    Button button, clearCart;
+    Button button, clearCart, purchase;
     ListView listView;
     EditText input;
     int inputValue;
@@ -43,6 +43,7 @@ public class BuyActivity extends AppCompatActivity {
         listView = (ListView) findViewById(R.id.buy);
         total = findViewById(R.id.total);
         clearCart = findViewById(R.id.clearcart);
+        purchase = findViewById(R.id.purchase);
         double totalPrice = 0;
         if (cart != null) {
             for (Ingredient ing : cart) {
@@ -95,6 +96,11 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cart.clear();
+                Intent intent = new Intent(getApplicationContext(), BuyActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+
             }
         });
     }

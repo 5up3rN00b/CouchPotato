@@ -95,6 +95,8 @@ public class BuyActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 cart.clear();
+                startActivity(new Intent(getApplicationContext(), BuyActivity.class));
+                finish();
             }
         });
     }

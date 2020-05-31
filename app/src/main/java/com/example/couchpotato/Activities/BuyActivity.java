@@ -25,11 +25,15 @@ import com.example.couchpotato.MainActivity;
 import com.example.couchpotato.R;
 import java.util.*;
 
+import static com.example.couchpotato.Activities.ViewFoodActivity.cart;
+
 public class BuyActivity extends AppCompatActivity {
     Button button;
     ListView listView;
     EditText input;
     int inputValue;
+    TextView total;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,30 +41,43 @@ public class BuyActivity extends AppCompatActivity {
         button = findViewById(R.id.back);
         input = findViewById(R.id.amount);
         listView = (ListView) findViewById(R.id.buy);
+        total = findViewById(R.id.total);
 
-
-
-        ArrayList<Ingredient> list = new ArrayList<>();
-        boolean inList = false;
-        for (Ingredient ing : ViewFoodActivity.cart){
-            for (int i = 0; i<list.size(); i++){
-                if (list.get(i).getName().equals(ing.getName())){
-                    list.get(i).add(ing.getAmount());
-                    inList = true;
-                }
-            }
-            if (inList == false){
-                list.add(ing);
+        double totalPrice = 0;
+        if (cart != null) {
+            for (Ingredient ing : cart) {
+                totalPrice += (ing.getPrice() * ing.getAmount());
             }
         }
 
+        total.setText("Total: $" + totalPrice);
 
-        ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
+        ArrayList<Ingredient> list = new ArrayList<>();
+        if (cart != null) {
+            boolean inList = false;
+            for (Ingredient ing : cart) {
+                inList = false;
+                System.out.println(ing.getName() + " " + ing.getAmount());
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).getName().equals(ing.getName())) {
+                        list.get(i).add(ing.getAmount());
+                        inList = true;
+                    }
+                }
+                if (inList == false) {
+                    list.add(ing);
+                }
+            }
+        }
+
+        if (list!=null) {
+            ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
 
-        BuyActivity.MyAdapter adapter = new MyAdapter(this, list);
-        listView.setAdapter(adapter);
+            BuyActivity.MyAdapter adapter = new MyAdapter(this, list);
+            listView.setAdapter(adapter);
 
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,13 +110,15 @@ public class BuyActivity extends AppCompatActivity {
             View row = layoutInflater.inflate(R.layout.buy_layout, parent, false);
             TextView items;
             TextView amount;
+
             final TextView price;
             items = row.findViewById(R.id.item);
             amount = row.findViewById(R.id.amount);
             price = row.findViewById(R.id.price);
 
+
             items.setText(names.get(position).getName());
-            amount.setText(String.valueOf(names.get(position).getAmount()));
+            amount.setText(String.valueOf(names.get(position).getAmount()) + names.get(position).getUnit());
 
             //input.setText(String.valueOf(names.get(position).getAmount()));
 

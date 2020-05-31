@@ -25,6 +25,8 @@ import com.example.couchpotato.MainActivity;
 import com.example.couchpotato.R;
 import java.util.*;
 
+import static com.example.couchpotato.Activities.ViewFoodActivity.cart;
+
 public class BuyActivity extends AppCompatActivity {
     Button button;
     ListView listView;
@@ -41,26 +43,29 @@ public class BuyActivity extends AppCompatActivity {
 
 
         ArrayList<Ingredient> list = new ArrayList<>();
-        boolean inList = false;
-        for (Ingredient ing : ViewFoodActivity.cart){
-            for (int i = 0; i<list.size(); i++){
-                if (list.get(i).getName().equals(ing.getName())){
-                    list.get(i).add(ing.getAmount());
-                    inList = true;
+        if (cart != null) {
+            boolean inList = false;
+            for (Ingredient ing : cart) {
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).getName().equals(ing.getName())) {
+                        list.get(i).add(ing.getAmount());
+                        inList = true;
+                    }
                 }
-            }
-            if (inList == false){
-                list.add(ing);
+                if (inList == false) {
+                    list.add(ing);
+                }
             }
         }
 
+        if (list!=null) {
+            ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
-        ArrayAdapter<Ingredient> arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, list);
 
+            BuyActivity.MyAdapter adapter = new MyAdapter(this, list);
+            listView.setAdapter(adapter);
 
-        BuyActivity.MyAdapter adapter = new MyAdapter(this, list);
-        listView.setAdapter(adapter);
-
+        }
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

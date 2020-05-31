@@ -183,7 +183,11 @@ public class RecipeActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Toast.makeText(RecipeActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
                     //add to users cart TODO:
-
+                    ArrayList <Ingredient> parts;
+                    Recipe r = store.get(position);
+                    for (Ingredient i : r.getRecipe()){
+                        ViewFoodActivity.cart.add(i);
+                    }
                     return;
                 }
             });

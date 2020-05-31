@@ -41,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
 
     public static User u = new User("aaron", "aaron", 0);
-
+    public static String nameUser;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,7 +91,9 @@ public class LoginActivity extends AppCompatActivity {
                         return;
                     }
                     if (text.equals("Login success")){
+                        nameUser = name.getText().toString();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                         finish();
                     }
                     else{

@@ -1,6 +1,6 @@
 package com.example.couchpotato.Classes;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 public class Recipe {
     private ArrayList<Ingredient> recipe;

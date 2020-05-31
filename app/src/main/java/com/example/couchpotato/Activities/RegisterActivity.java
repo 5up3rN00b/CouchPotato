@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private Button submit, back;
     private EditText name, password;
-
+    public static String nameRegister;
     private static final String TAG = "RegisterActivity";
 
     @Override
@@ -91,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                     if (text.equals("Registered successfully")){
                         Toast.makeText(RegisterActivity.this, text, Toast.LENGTH_SHORT).show();
+                        nameRegister = name.getText().toString();
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         finish();
                     }

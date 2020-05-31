@@ -177,6 +177,8 @@ public class RecipeActivity extends AppCompatActivity {
 
     class MyAdapter extends ArrayAdapter<String> {
         Context context;
+
+        ArrayList<Recipe> recipes;
         ArrayList <String> recipeNames;
         ArrayList <Double> recipePrice;
         ArrayList <String> recipeAmount;

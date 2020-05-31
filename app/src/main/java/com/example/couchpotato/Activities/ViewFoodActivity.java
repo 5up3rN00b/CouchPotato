@@ -26,6 +26,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ViewFoodActivity extends AppCompatActivity  {
+    public static ArrayList <Ingredient> cart = new ArrayList<>();
     Button button;
     ArrayList<Ingredient> pantry = new ArrayList<>();
     ListView listView;
@@ -147,7 +148,7 @@ public class ViewFoodActivity extends AppCompatActivity  {
                 public void onClick(View v) {
                     Toast.makeText(ViewFoodActivity.this, "Added to Cart", Toast.LENGTH_SHORT).show();
                     //add to users cart TODO:
-                    //cart.add(pantry.get(position));
+                    cart.add(pantry.get(position));
 
                     return;
                 }

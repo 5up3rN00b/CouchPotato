@@ -185,9 +185,12 @@ public class RecipeActivity extends AppCompatActivity {
                     //add to users cart TODO:
                     ArrayList <Ingredient> parts;
                     Recipe r = store.get(position);
-                    for (Ingredient i : r.getRecipe()){
-                        ViewFoodActivity.cart.add(i);
-                    }
+                    countIng = listView.getChildAt(position).findViewById(R.id.count);
+                    System.out.println(countIng.toString());
+                        for (Ingredient i : r.getRecipe()) {
+                            i.multAmount(Integer.parseInt(countIng.getText().toString()));
+                            ViewFoodActivity.cart.add(i);
+                        }
                     return;
                 }
             });

@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     HttpClient httpclient = HttpClients.createDefault();
-                    HttpPost httppost = new HttpPost("http://73.71.24.214:8080/register.php");
+                    HttpPost httppost = new HttpPost("http://IP:8080/register.php");
 
                     // Request parameters and other properties.
                     List<NameValuePair> params = new ArrayList<NameValuePair>(2);
